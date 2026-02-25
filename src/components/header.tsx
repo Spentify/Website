@@ -14,7 +14,7 @@ export default function Header() {
               loading='eager'
               fetchPriority="high"
               decoding="async"
-              className={'max-w-[9.375rem] w-full h-[36px]'}
+              className={'w-auto h-[36px]'}
               src="/logo.png"
             />
           </Link>
