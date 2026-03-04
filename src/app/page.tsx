@@ -2,7 +2,7 @@ import Hero from '@/components/sections/hero'
 
 export default function Page() {
   return (
-    <div>
+    <main>
       <Hero />
 
       <div className="container px-5 md:px-0 py-10">
@@ -75,7 +75,6 @@ export default function Page() {
           </div>
         </div>
       </div>
-    </div>
-    
+    </main>
   )
 }

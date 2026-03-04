@@ -2,13 +2,15 @@ import Hero from '@/components/sections/hero'
 
 export default function Page() {
   return (
-    <div>
+    <main>
       <div className="container px-5 md:px-0 py-10">
         <h1 className="text-4xl font-bold mb-4">Privacy Policy</h1>
-        <p className="text-sm text-gray-500 mb-8">Effective date: January 1, 2026</p>
+        <p className="text-sm text-gray-500 mb-8">
+          Effective date: January 1, 2026
+        </p>
 
         <p className="mb-6">
-          Spentify is operated by <strong>AppPeppers (Rothana Choun)</strong>
+          <strong>Spentify</strong> is operated by App Peppers (Rothana Choun)
           ("we", "our", or "us"). This Privacy Policy explains how we collect,
           use, store, and protect your information when you use the Spentify
           mobile application and related services.
@@ -43,8 +45,10 @@ export default function Page() {
         </ul>
 
         <p className="mb-8">
-          Providing personal data is optional, but certain features such as
-          cloud synchronization and backup require an account.
+          An account is required to access Spentify. Cloud synchronization is
+          optional. When disabled, your financial data — including transactions,
+          wallets, and budgets — is stored only on your device and is not
+          transmitted to our cloud servers.
         </p>
 
         <h2 className="text-2xl font-semibold mt-10 mb-4">
@@ -64,10 +68,11 @@ export default function Page() {
         </p>
 
         <p className="mb-8">
-          We may share information with trusted service providers,
-          when required by law, or to protect the security and rights
-          of Spentify and its users. Aggregated and anonymized data
-          may be used for analytics and improvement.
+          We may share information with trusted service providers who assist
+          us in operating the app, when required by law, or to protect the
+          security, rights, and integrity of Spentify and its users.
+          Aggregated and anonymized data may be used for analytics and
+          improvement.
         </p>
 
         <h2 className="text-2xl font-semibold mt-10 mb-4">
@@ -138,7 +143,84 @@ export default function Page() {
         </ul>
 
         <h2 className="text-2xl font-semibold mt-10 mb-4">
-          7. Changes to This Privacy Policy
+          7. Security of Your Information
+        </h2>
+
+        <p className="mb-6">
+          We use encryption and industry-standard technical and organizational
+          safeguards to protect your personal data. This includes measures
+          designed to prevent unauthorized access, disclosure, alteration,
+          or destruction of your information.
+        </p>
+
+        <p className="mb-8">
+          However, no method of transmission over the Internet or electronic
+          storage is completely secure, and we cannot guarantee absolute
+          security.
+        </p>
+
+        <h2 className="text-2xl font-semibold mt-10 mb-4">
+          8. International Data Transfers
+        </h2>
+
+        <p className="mb-8">
+          Your information may be processed or stored on servers located
+          outside your country of residence. By using Spentify, you consent
+          to such transfers, subject to appropriate safeguards.
+        </p>
+
+        <h2 className="text-2xl font-semibold mt-10 mb-4">
+          9. Analytics
+        </h2>
+
+        <p className="mb-6">
+          We may use third-party analytics services to understand how users
+          interact with Spentify and to improve performance, reliability,
+          and features.
+        </p>
+
+        <p className="mb-6">
+          These services may collect limited technical information such as
+          device type, operating system, app version, crash reports, and
+          general usage statistics.
+        </p>
+
+        <p className="mb-8">
+          We do not use analytics tools to access, track, or analyze your
+          financial data, including transactions, wallets, or budgets.
+          Services such as Google Analytics or Firebase Analytics are used
+          solely for anonymized usage insights.
+        </p>
+
+        <h2 className="text-2xl font-semibold mt-10 mb-4">
+          10. Advertising
+        </h2>
+
+        <p className="mb-6">
+          Spentify may display limited advertisements to support the
+          maintenance and development of the app.
+        </p>
+
+        <p className="mb-8">
+          We do not share your financial data (such as transactions, wallets,
+          or budgets) with advertisers. Advertising partners may collect
+          limited technical data such as device information or usage statistics
+          in accordance with their own privacy policies.
+        </p>
+
+        <h2 className="text-2xl font-semibold mt-10 mb-4">
+          11. Children’s Privacy
+        </h2>
+
+        <p className="mb-8">
+          Spentify is not intended for children under the age of 13.
+          We do not knowingly collect personal information from children.
+          If we become aware that such data has been collected,
+          we will delete it promptly.
+        </p>
+
+        <h2 className="text-2xl font-semibold mt-10 mb-4">
+          12. Changes to This Privacy Policy
         </h2>
 
         <p className="mb-8">
@@ -147,7 +229,7 @@ export default function Page() {
         </p>
 
         <h2 className="text-2xl font-semibold mt-10 mb-4">
-          8. Contact Us
+          13. Contact Us
         </h2>
 
         <p className="mb-2">
@@ -161,9 +243,9 @@ export default function Page() {
         </p>
 
         <p className="mb-2">
-          Operator: App Peppers
+          Operator: AppPeppers
         </p>
       </div>
-    </div>
+    </main>
   )
 }
