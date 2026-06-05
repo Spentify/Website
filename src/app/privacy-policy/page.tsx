@@ -1,5 +1,3 @@
-import Hero from '@/components/sections/hero'
-
 export default function Page() {
   return (
     <main>
@@ -11,9 +9,9 @@ export default function Page() {
 
         <p className="mb-6">
           <strong>Spentify</strong> is operated by App Peppers (Rothana Choun)
-          ("we", "our", or "us"). This Privacy Policy explains how we collect,
-          use, store, and protect your information when you use the Spentify
-          mobile application and related services.
+          (&quot;we&quot;, &quot;our&quot;, or &quot;us&quot;). This Privacy Policy
+          explains how we collect, use, store, and protect your information
+          when you use the Spentify mobile application and related services.
         </p>
 
         <p className="mb-10">

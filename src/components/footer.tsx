@@ -36,6 +36,15 @@ export default function Footer() {
               <MagnifierIcon className="w-4 h-4" />
             </Link>
           </div>
+
+          <div className="flex flex-wrap gap-x-4 gap-y-2 pt-1 text-sm text-gray-600">
+            <Link href="/privacy-policy" className="hover:text-gray-950">
+              Privacy Policy
+            </Link>
+            <Link href="/terms" className="hover:text-gray-950">
+              Terms of Use
+            </Link>
+          </div>
         </div>
       </div>
 
