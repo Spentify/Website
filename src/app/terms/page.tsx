@@ -74,12 +74,17 @@ export default function Page() {
 
         <ul className="list-disc pl-6 space-y-2 mb-6">
           <li>
-            Subscriptions renew automatically unless canceled before the end of
-            the current billing period.
+            Subscriptions renew automatically unless canceled at least 24 hours
+            before the end of the current billing period.
           </li>
           <li>
-            Your account will be charged through the app store account used to
-            make the purchase.
+            Your Apple ID or Google Play account will be charged through the app
+            store account used to make the purchase.
+          </li>
+          <li>
+            For Apple subscriptions, your Apple ID account will be charged for
+            renewal within 24 hours before the end of the current billing
+            period.
           </li>
           <li>
             You can manage or cancel your subscription through your Apple App
@@ -255,7 +260,7 @@ export default function Page() {
         </p>
 
         <p className="mb-2">
-          Operator: AppPeppers
+          Operator: App Peppers
         </p>
       </div>
     </main>
