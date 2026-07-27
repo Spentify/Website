@@ -38,6 +38,9 @@ export default function Footer() {
           </div>
 
           <div className="flex flex-wrap gap-x-4 gap-y-2 pt-1 text-sm text-gray-600">
+            <Link href="/help" className="hover:text-gray-950">
+              Help Center
+            </Link>
             <Link href="/privacy-policy" className="hover:text-gray-950">
               Privacy Policy
             </Link>
