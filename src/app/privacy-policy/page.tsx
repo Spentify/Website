@@ -1,3 +1,14 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Privacy Policy | Spentify",
+  description:
+    "Learn how Spentify collects, uses, stores, and protects your information.",
+  alternates: {
+    canonical: "/privacy-policy",
+  },
+};
+
 export default function Page() {
   return (
     <main>

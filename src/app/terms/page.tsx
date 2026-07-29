@@ -3,6 +3,9 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Terms of Use | Spentify",
   description: "Terms of Use for the Spentify mobile application.",
+  alternates: {
+    canonical: "/terms",
+  },
 };
 
 export default function Page() {

@@ -1,4 +1,11 @@
+import type { Metadata } from "next";
 import Hero from '@/components/sections/hero'
+
+export const metadata: Metadata = {
+  alternates: {
+    canonical: "/",
+  },
+};
 
 export default function Page() {
   const featureCardClass =
