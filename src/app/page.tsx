@@ -3,7 +3,7 @@ import Hero from '@/components/sections/hero'
 
 export const metadata: Metadata = {
   alternates: {
-    canonical: "/",
+    canonical: "https://spentify.app/",
   },
 };
 
