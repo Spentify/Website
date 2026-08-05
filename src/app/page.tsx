@@ -2,8 +2,23 @@ import type { Metadata } from "next";
 import Hero from '@/components/sections/hero'
 
 export const metadata: Metadata = {
+  title: "Spentify — Simple Expense Tracker & Budget App",
+  description: "See where your money goes and what you have left with Spentify, a simple expense tracker for managing spending, budgets, and savings.",
   alternates: {
     canonical: "https://spentify.app/",
+  },
+  openGraph: {
+    title: "Spentify — Simple Expense Tracker & Budget App",
+    description: "See where your money goes and what you have left. Track spending, manage budgets, and build savings with Spentify.",
+    url: "https://spentify.app/",
+    type: "website",
+    images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "Spentify — Simple expense tracking and budgeting" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Spentify — Simple Expense Tracker & Budget App",
+    description: "See where your money goes and what you have left with Spentify.",
+    images: ["/opengraph-image"],
   },
 };
 

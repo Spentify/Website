@@ -16,8 +16,19 @@ export const metadata: Metadata = {
     "monthly budget planner",
   ],
   alternates: { canonical: "/calculators/50-30-20" },
-  openGraph: { title, description, url: "/calculators/50-30-20", type: "website" },
-  twitter: { card: "summary_large_image", title, description },
+  openGraph: {
+    title,
+    description,
+    url: "/calculators/50-30-20",
+    type: "website",
+    images: [{ url: "/calculators/50-30-20/opengraph-image", width: 1200, height: 630, alt: "Spentify 50/30/20 Budget Calculator" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title,
+    description,
+    images: ["/calculators/50-30-20/opengraph-image"],
+  },
   robots: { index: true, follow: true },
 };
 
