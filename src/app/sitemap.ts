@@ -1,14 +1,18 @@
 import type { MetadataRoute } from "next";
-import { helpArticles, helpTopics } from "@/lib/help-articles";
 
 const baseUrl = "https://spentify.app";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const staticPages: MetadataRoute.Sitemap = [
+  return [
     {
       url: baseUrl,
       changeFrequency: "monthly",
       priority: 1,
+    },
+    {
+      url: `${baseUrl}/calculators/50-30-20`,
+      changeFrequency: "monthly",
+      priority: 0.9,
     },
     {
       url: `${baseUrl}/help`,
@@ -26,18 +30,4 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.3,
     },
   ];
-
-  const topicPages: MetadataRoute.Sitemap = helpTopics.map((topic) => ({
-    url: `${baseUrl}/help/topics/${topic.slug}`,
-    changeFrequency: "monthly",
-    priority: 0.7,
-  }));
-
-  const articlePages: MetadataRoute.Sitemap = helpArticles.map((article) => ({
-    url: `${baseUrl}/help/${article.slug}`,
-    changeFrequency: "monthly",
-    priority: 0.6,
-  }));
-
-  return [...staticPages, ...topicPages, ...articlePages];
 }
