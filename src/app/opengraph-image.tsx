@@ -4,7 +4,12 @@ export const alt = "Spentify — Simple expense tracking and budgeting";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
-export default function OpenGraphImage() {
+const logoData = fetch(new URL("../../public/logo.png", import.meta.url)).then((response) => response.arrayBuffer());
+const appScreenData = fetch(new URL("../../public/screen-tran.png", import.meta.url)).then((response) => response.arrayBuffer());
+
+export default async function OpenGraphImage() {
+  const [logo, appScreen] = await Promise.all([logoData, appScreenData]);
+
   return new ImageResponse(
     (
       <div
@@ -25,9 +30,7 @@ export default function OpenGraphImage() {
 
         <div style={{ display: "flex", flexDirection: "column", width: "100%", zIndex: 1 }}>
           <div style={{ display: "flex", alignItems: "center", gap: 14 }}>
-            <div style={{ width: 48, height: 48, display: "flex", alignItems: "center", justifyContent: "center", borderRadius: 13, background: "#0e76d9", color: "#ffffff", fontSize: 25, fontWeight: 800 }}>
-              S
-            </div>
+            <img src={logo as unknown as string} width="52" height="52" alt="" style={{ borderRadius: 13 }} />
             <span style={{ fontSize: 28, fontWeight: 700, letterSpacing: "-0.5px" }}>Spentify</span>
           </div>
 
@@ -43,30 +46,25 @@ export default function OpenGraphImage() {
 
             <div
               style={{
-                width: 328,
+                width: 286,
+                height: 500,
                 display: "flex",
-                flexDirection: "column",
-                border: "1px solid #dbeafe",
-                borderRadius: 28,
-                background: "rgba(255,255,255,0.94)",
-                padding: "30px",
-                boxShadow: "0 18px 50px rgba(15,23,42,0.10)",
+                position: "relative",
+                overflow: "hidden",
+                border: "9px solid #111827",
+                borderRadius: 42,
+                background: "#ffffff",
+                boxShadow: "0 24px 60px rgba(15,23,42,0.20)",
               }}
             >
-              <span style={{ color: "#64748b", fontSize: 15, fontWeight: 700, letterSpacing: "1.4px", textTransform: "uppercase" }}>This month</span>
-              <span style={{ display: "flex", marginTop: 13, fontSize: 42, fontWeight: 800, letterSpacing: "-1.5px" }}>$2,840</span>
-              <span style={{ color: "#64748b", fontSize: 17, marginTop: 3 }}>available balance</span>
-              <div style={{ display: "flex", height: 12, overflow: "hidden", borderRadius: 999, background: "#e2e8f0", marginTop: 26 }}>
-                <div style={{ display: "flex", width: "66%", borderRadius: 999, background: "#0e76d9" }} />
-              </div>
-              <div style={{ display: "flex", justifyContent: "space-between", marginTop: 12, color: "#475569", fontSize: 16, fontWeight: 600 }}>
-                <span>Budget used</span><span>66%</span>
-              </div>
-              <div style={{ display: "flex", gap: 10, marginTop: 25 }}>
-                {["Spending", "Budgets", "Savings"].map((item) => (
-                  <span key={item} style={{ display: "flex", borderRadius: 999, background: "#eff6ff", color: "#1d4ed8", padding: "7px 10px", fontSize: 12, fontWeight: 700 }}>{item}</span>
-                ))}
-              </div>
+              <img
+                src={appScreen as unknown as string}
+                width="268"
+                height="566"
+                alt=""
+                style={{ objectFit: "cover", objectPosition: "top", marginTop: -1 }}
+              />
+              <div style={{ display: "flex", position: "absolute", width: 82, height: 19, borderRadius: 999, background: "#111827", top: 9, left: 93 }} />
             </div>
           </div>
 
