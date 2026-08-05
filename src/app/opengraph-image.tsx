@@ -1,14 +1,19 @@
+import { readFile } from "node:fs/promises";
+import path from "node:path";
 import { ImageResponse } from "next/og";
 
 export const alt = "Spentify — Simple expense tracking and budgeting";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
-
-const logoData = fetch(new URL("../../public/logo.png", import.meta.url)).then((response) => response.arrayBuffer());
-const appScreenData = fetch(new URL("../../public/screen-tran.png", import.meta.url)).then((response) => response.arrayBuffer());
+export const runtime = "nodejs";
 
 export default async function OpenGraphImage() {
-  const [logo, appScreen] = await Promise.all([logoData, appScreenData]);
+  const [logoBuffer, appScreenBuffer] = await Promise.all([
+    readFile(path.join(process.cwd(), "public", "logo.png")),
+    readFile(path.join(process.cwd(), "public", "screen-tran.png")),
+  ]);
+  const logo = `data:image/png;base64,${logoBuffer.toString("base64")}`;
+  const appScreen = `data:image/png;base64,${appScreenBuffer.toString("base64")}`;
 
   return new ImageResponse(
     (
@@ -30,7 +35,7 @@ export default async function OpenGraphImage() {
 
         <div style={{ display: "flex", flexDirection: "column", width: "100%", zIndex: 1 }}>
           <div style={{ display: "flex", alignItems: "center", gap: 14 }}>
-            <img src={logo as unknown as string} width="52" height="52" alt="" style={{ borderRadius: 13 }} />
+            <img src={logo} width="52" height="52" alt="" style={{ borderRadius: 13 }} />
             <span style={{ fontSize: 28, fontWeight: 700, letterSpacing: "-0.5px" }}>Spentify</span>
           </div>
 
@@ -58,7 +63,7 @@ export default async function OpenGraphImage() {
               }}
             >
               <img
-                src={appScreen as unknown as string}
+                  src={appScreen}
                 width="268"
                 height="566"
                 alt=""
