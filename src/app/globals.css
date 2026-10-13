@@ -59,3 +59,32 @@ body {}
   padding-left: 2.5rem;
   padding-right: 2.5rem;
 }
+/* Homepage motion uses compositor-friendly transforms and opacity. */
+html { scroll-behavior: smooth; }
+.home-hero { background: linear-gradient(120deg, #fff 40%, #f0f7ff 100%); }
+.phone-halo { background: radial-gradient(ellipse, #d5e9ff 0%, #e8f3ff 45%, transparent 70%); }
+.hero-enter { animation: hero-enter 650ms cubic-bezier(.2,.7,.2,1) both; }
+.hero-delay-1 { animation-delay: 80ms; }
+.hero-delay-2 { animation-delay: 160ms; }
+.hero-delay-3 { animation-delay: 240ms; }
+@keyframes hero-enter { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
+.download-button { display: inline-flex; transition: transform 180ms ease, box-shadow 180ms ease; }
+.download-button:hover { transform: translateY(-3px); box-shadow: 0 8px 20px rgb(15 23 42 / .14); }
+.download-button:active { transform: translateY(0); }
+a:focus-visible { outline: 3px solid #0e76d9; outline-offset: 5px; }
+.benefit-card { border-radius: 24px; padding: 28px; border: 1px solid rgb(15 23 42 / .04); transition: transform 200ms ease, box-shadow 200ms ease; }
+.benefit-card:hover { transform: translateY(-5px); box-shadow: 0 16px 32px -16px rgb(15 23 42 / .18); }
+[data-reveal] { transition: opacity 600ms ease, transform 600ms cubic-bezier(.2,.7,.2,1); }
+.reveal-pending { opacity: 0; transform: translateY(22px); }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .hero-enter { animation: none; }
+  [data-reveal], .download-button, .benefit-card, .home-hero * { transition: none !important; }
+  .reveal-pending { opacity: 1; transform: none; }
+  .download-button:hover, .benefit-card:hover { transform: none; }
+}
+
+@media (width >= 64rem) {
+  .feature-grid { grid-template-rows: repeat(4, auto); column-gap: 20px; row-gap: 0; }
+  .feature-card { display: grid; grid-row: span 4; grid-template-rows: subgrid; }
+}

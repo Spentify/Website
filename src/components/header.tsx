@@ -20,7 +20,10 @@ export default function Header() {
           </Link>
           <h1 className='font-base text-lg font-medium'>Spentify</h1>
         </div>
-        <nav aria-label="Main navigation" className="flex items-center gap-5 text-sm font-medium text-gray-600">
+        <nav aria-label="Main navigation" className="flex items-center gap-3 sm:gap-5 text-sm font-medium text-gray-600">
+          <Link href="/tips" className="transition-colors hover:text-gray-950">
+            Money Tips
+          </Link>
           <Link href="/help" className="transition-colors hover:text-gray-950">
             Help Center
           </Link>
